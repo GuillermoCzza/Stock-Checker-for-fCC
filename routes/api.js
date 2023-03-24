@@ -55,7 +55,7 @@ module.exports = function (app) {
         if (liking == 'true') {
           let previouslyLiked = false;
           //check if has already been liked. If not previously liked, add like
-          if (doc.ipHashesLiking.includes(ipHash)) {
+          if (!doc.ipHashesLiking.includes(ipHash)) {
             doc.ipHashesLiking.push(ipHash)
             doc.save();
           }
